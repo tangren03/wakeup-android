@@ -32,12 +32,11 @@ public class SettingActivity extends RTActivity {
 
 
     private void initView() {
-        
+        lvHour = (ListView) findViewById(R.id.lvHour);  
+        lvMinute = (ListView) findViewById(R.id.lvMinute);  
     }
 
     private void initData() {
-        lvHour = (ListView) findViewById(R.id.lvHour);  
-        lvMinute = (ListView) findViewById(R.id.lvMinute);  
         
         hourAdapter = new TimeSelectAdapter(this, Common.getTimeStrings(5, 9));  
         minuteAdapter = new TimeSelectAdapter(this, Common.getTimeStrings(0, 59));  
@@ -50,7 +49,6 @@ public class SettingActivity extends RTActivity {
             
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                System.out.println("scrollState=" + scrollState);
                 if (scrollState == SCROLL_STATE_IDLE) {
                     lvMinute.setSelection(currentPosition + 1); 
                 }
@@ -61,8 +59,6 @@ public class SettingActivity extends RTActivity {
                                  int totalItemCount) {
                 currentPosition = firstVisibleItem;
             }
-
-
         });
     }
 }

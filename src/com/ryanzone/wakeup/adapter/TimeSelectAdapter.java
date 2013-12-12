@@ -11,14 +11,11 @@ import com.ryanzone.wakeup.R;
 
 public class TimeSelectAdapter extends BaseAdapter{  
     
-    private Context context;  
     private String[] strs = null;  
     LayoutInflater inflater = null;  
     public TimeSelectAdapter(Context context, String[] strings){  
-        this.context = context;  
         //listview中循环显示的数据 
         strs = strings;
-//        strs = new String[]{"0","1","2","3","4","5","6","7","8","9"};  
         inflater = LayoutInflater.from(context);  
     }  
     public TimeSelectAdapter(){  
