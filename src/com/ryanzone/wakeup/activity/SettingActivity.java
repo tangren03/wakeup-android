@@ -50,7 +50,9 @@ public class SettingActivity extends RTActivity {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 if (scrollState == SCROLL_STATE_IDLE) {
-                    lvMinute.setSelection(currentPosition + 1); 
+                    minuteAdapter.setSelectItem(currentPosition + 2);
+                    minuteAdapter.notifyDataSetChanged();
+                    lvMinute.setSelection(currentPosition + 1);
                 }
             }
             
