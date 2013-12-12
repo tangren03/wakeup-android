@@ -2,6 +2,8 @@ package com.ryanzone.wakeup.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import com.ryanzone.wakeup.R;
 import com.ryanzone.wakeup.activity.base.RTActivity;
@@ -17,7 +19,17 @@ public class MainActivity extends RTActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		initView();
 	}
+
+    private void initView() {
+        findViewById(R.id.tvGoToSetting).setOnClickListener(new OnClickListener() {
+            
+            @Override
+            public void onClick(View arg0) {
+                openActivity(SettingActivity.class);
+            }
+        });
+    }
 
 }
