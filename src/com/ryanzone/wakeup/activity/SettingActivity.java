@@ -1,9 +1,19 @@
 package com.ryanzone.wakeup.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ryanzone.wakeup.R;
 import com.ryanzone.wakeup.activity.base.RTActivity;
@@ -19,9 +29,12 @@ public class SettingActivity extends RTActivity {
 
     private ListView lvHour;
     private ListView lvMinute;
+    private GridView gvWeek;
     private TimeSelectAdapter hourAdapter;
     private TimeSelectAdapter minuteAdapter;
+    private GvWeekAdapter gvWeekAdapter;
     private int currentPosition = Integer.MAX_VALUE/2+1;
+    private List<String> dayStrings;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,13 +47,25 @@ public class SettingActivity extends RTActivity {
     private void initView() {
         lvHour = (ListView) findViewById(R.id.lvHour);  
         lvMinute = (ListView) findViewById(R.id.lvMinute);  
+        gvWeek = (GridView) findViewById(R.id.gvWeek);  
     }
 
     private void initData() {
         
+        dayStrings = new ArrayList<String>();
+        dayStrings.add("MON");
+        dayStrings.add("TUR");
+        dayStrings.add("WEN");
+        dayStrings.add("THR");
+        dayStrings.add("FRI");
+        dayStrings.add("SAT");
+        dayStrings.add("SUN");
+        
         hourAdapter = new TimeSelectAdapter(this, Common.getTimeStrings(5, 9));  
         minuteAdapter = new TimeSelectAdapter(this, Common.getTimeStrings(0, 59));  
+        gvWeekAdapter = new GvWeekAdapter(SettingActivity.this, R.layout.gv_list_item_week,dayStrings);  
         
+        gvWeek.setAdapter(gvWeekAdapter);
         lvHour.setAdapter(hourAdapter);  
         lvHour.setSelection(Integer.MAX_VALUE/2+1);  
         lvMinute.setAdapter(minuteAdapter);  
@@ -50,8 +75,10 @@ public class SettingActivity extends RTActivity {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 if (scrollState == SCROLL_STATE_IDLE) {
+                    //change the seletion text color by setSelectItem
                     minuteAdapter.setSelectItem(currentPosition + 2);
                     minuteAdapter.notifyDataSetChanged();
+                    //分钟设置中间一个为选中的
                     lvMinute.setSelection(currentPosition + 1);
                 }
             }
@@ -59,8 +86,46 @@ public class SettingActivity extends RTActivity {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                                  int totalItemCount) {
+                //set current Item
                 currentPosition = firstVisibleItem;
             }
         });
+    }
+    /**
+     * week adapter
+     * @author walker
+     */
+    class GvWeekAdapter extends ArrayAdapter<String> {
+
+        private GvWeekHolder   holder;
+        int resourceId;
+        LayoutInflater inflater;
+        
+        public GvWeekAdapter(Context context, int resourceId, List<String> objects) {
+            super(context, resourceId, objects);
+            this.resourceId = resourceId;
+            inflater = SettingActivity.this.getLayoutInflater();
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            String bean = getItem(position);
+            holder = null;
+            if (convertView == null) {
+                holder = new GvWeekHolder();
+                convertView = inflater.inflate(resourceId, parent, false);
+                holder.tvDay = (TextView) convertView.findViewById(R.id.tvWeekOfDay);
+                convertView.setTag(holder);
+            } else {
+                holder = (GvWeekHolder) convertView.getTag();
+            }
+
+            holder.tvDay.setText(bean);
+            return convertView;
+        }
+    }
+    
+    class GvWeekHolder {
+        TextView  tvDay;
     }
 }
