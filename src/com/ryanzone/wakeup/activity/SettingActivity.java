@@ -11,9 +11,9 @@ import com.ryanzone.wakeup.adapter.TimeSelectAdapter;
 import com.ryanzone.wakeup.utils.Common;
 /**
  * Ever activity should extends from RTActivity
- * MainActivity.java
- * @author Ryan
- * Create at 2013-12-8 下午2:14:22
+ * SettingActivity.java
+ * @author walker02
+ * Create at 2013-12-12 下午2:14:22
  */
 public class SettingActivity extends RTActivity {
 
