@@ -8,6 +8,10 @@
     <color name="red">#FFE31818</color>
     <color name="transprent">#00000000</color>
     <color name="orange">#FFFF7E00</color>
+    <color name="time_selection_bg">#ffe63f</color>
+    <color name="time_bg">#7fc4d2</color>
+    <color name="time_text_color">#c5c5c5</color>
+    <color name="time_text_color_selection">#65d7ed</color>
     <color name="grey">#FF8B8B8B</color>
     <color name="blue">#009</color>
     <color name="transparent">#00000000</color>

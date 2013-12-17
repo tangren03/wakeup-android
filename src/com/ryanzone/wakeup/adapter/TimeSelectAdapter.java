@@ -1,6 +1,7 @@
 package com.ryanzone.wakeup.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ public class TimeSelectAdapter extends BaseAdapter {
     private Context context;
     private String[] strs     = null;
     LayoutInflater   inflater = null;
-
+    private Typeface     fontFace;
     public TimeSelectAdapter(Context context, String[] strings) {
         this.context = context;
         //listview中循环显示的数据 
@@ -55,10 +56,13 @@ public class TimeSelectAdapter extends BaseAdapter {
         }
         //strs[position%strs.length]实现listview中数据的循环  
         if (position == selectItem) {  
-            holder.text.setTextColor(context.getResources().getColor(R.color.red));
+            holder.text.setTextColor(context.getResources().getColor(R.color.time_text_color_selection));
         } else {
-            holder.text.setTextColor(context.getResources().getColor(R.color.white));
+            holder.text.setTextColor(context.getResources().getColor(R.color.time_text_color));
         } 
+        if (fontFace == null)
+            fontFace = Typeface.createFromAsset(context.getAssets(), "time_font.otf");
+        holder.text.setTypeface(fontFace);
         holder.text.setText(strs[position % strs.length]);
 
         return view;
