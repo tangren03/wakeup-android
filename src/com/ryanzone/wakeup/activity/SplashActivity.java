@@ -18,13 +18,10 @@ public class SplashActivity extends RTActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//hiden status bar
 		getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN ,      
                 WindowManager.LayoutParams. FLAG_FULLSCREEN);  
 		
 		setContentView(R.layout.activity_splash);
-		splashHandler.removeMessages(0);
-		splashHandler.sendEmptyMessageDelayed(0, 2000);
 	}
 	
 	Handler splashHandler = new Handler(){
@@ -33,8 +30,14 @@ public class SplashActivity extends RTActivity {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			openActivity(MainActivity.class);
-			finish();
+//			finish();
 		}
 		
 	};
+
+	@Override
+	public void init() {
+		splashHandler.removeMessages(0);
+		splashHandler.sendEmptyMessageDelayed(0, 2000);
+	}
 }

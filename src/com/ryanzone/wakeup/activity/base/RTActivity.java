@@ -12,13 +12,18 @@ import android.view.WindowManager;
  * @Author Ryan
  * @Create 2013-8-15
  */
-public class RTActivity extends Activity {
-
+public abstract class RTActivity extends Activity {
+	
+	public abstract void init();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN ,      
+                WindowManager.LayoutParams. FLAG_FULLSCREEN);  
 		// Invisible the title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		init();
 	}
 
 	/**
