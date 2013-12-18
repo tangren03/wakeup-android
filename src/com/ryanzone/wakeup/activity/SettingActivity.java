@@ -51,7 +51,7 @@ public class SettingActivity extends RTActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        
         initView();
         initData();
     }
@@ -176,5 +176,14 @@ public class SettingActivity extends RTActivity {
 
     class GvWeekHolder {
         TextView tvDay;
+    }
+
+    @Override
+    public void init() {
+    }
+
+    @Override
+    public void loadViewLayout() {
+        setContentView(R.layout.activity_setting);
     }
 }

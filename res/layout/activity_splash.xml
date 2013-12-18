@@ -20,9 +20,9 @@
         android:src="@drawable/txt_splash" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/bg_splash_botton" />
+        android:background="@drawable/bg_splash_botton" />
 
 </RelativeLayout>
