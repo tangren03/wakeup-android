@@ -62,7 +62,7 @@
 
     <!-- Add clock button -->
     <Button 
-        android:id="@+id/btn_add_clock"
+        android:id="@+id/btn_add"
         style="@style/layout_all_wrap"
         android:layout_centerHorizontal="true"
         android:background="@drawable/btn_add_new"

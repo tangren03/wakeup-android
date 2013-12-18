@@ -24,7 +24,7 @@ public class MainActivity extends RTActivity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		
 	}
 
 	@Override
@@ -33,16 +33,21 @@ public class MainActivity extends RTActivity implements OnClickListener{
 		tv_location = (TextView)this.findViewById(R.id.tv_location);
 		tv_weather = (TextView)this.findViewById(R.id.tv_weather);
 		tv_time = (TextView)this.findViewById(R.id.tv_time);
-		btn_add_clock = (Button)this.findViewById(R.id.btn_add_clock);
+		btn_add_clock = (Button)MainActivity.this.findViewById(R.id.btn_add);
 		btn_add_clock.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == R.id.btn_add_clock) {
+		if (v.getId() == R.id.btn_add) {
 			//TODO open clock setting activity
-			
+		    openActivity(SettingActivity.class);
 		}
 	}
+
+    @Override
+    public void loadViewLayout() {
+        setContentView(R.layout.activity_main);
+    }
 
 }

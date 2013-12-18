@@ -43,4 +43,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="anim_bottom_menu">
+        <item name="android:windowEnterAnimation">@anim/bottom_menu_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_menu_out</item>
+    </style>
+
 </resources>

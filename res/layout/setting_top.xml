@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="25dp" >
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dip"
+        android:background="@drawable/back_selector" />
+
+    <Button
+        android:id="@+id/ivRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dip"
+        android:background="@drawable/confirm_selector" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/ivRight"
+        android:layout_toRightOf="@id/btnBack" >
+
+        <EditText
+            android:id="@+id/tvTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:singleLine="true"
+            android:hint="@string/setting_slogan"
+            android:textColor="@android:color/white"
+            android:paddingLeft="2dp"
+            android:textColorHint="@android:color/white"
+            android:gravity="center"
+            android:textSize="20.0sp"
+            android:selectAllOnFocus="true"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:src="@drawable/title_line" />
+    </RelativeLayout>
+
+</RelativeLayout>

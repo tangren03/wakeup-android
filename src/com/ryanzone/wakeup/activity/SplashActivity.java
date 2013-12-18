@@ -21,7 +21,7 @@ public class SplashActivity extends RTActivity {
 		getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN ,      
                 WindowManager.LayoutParams. FLAG_FULLSCREEN);  
 		
-		setContentView(R.layout.activity_splash);
+		
 	}
 	
 	Handler splashHandler = new Handler(){
@@ -40,4 +40,9 @@ public class SplashActivity extends RTActivity {
 		splashHandler.removeMessages(0);
 		splashHandler.sendEmptyMessageDelayed(0, 2000);
 	}
+
+    @Override
+    public void loadViewLayout() {
+        setContentView(R.layout.activity_splash);
+    }
 }

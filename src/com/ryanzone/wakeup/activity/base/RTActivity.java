@@ -15,6 +15,7 @@ import android.view.WindowManager;
 public abstract class RTActivity extends Activity {
 	
 	public abstract void init();
+	public abstract void loadViewLayout();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public abstract class RTActivity extends Activity {
                 WindowManager.LayoutParams. FLAG_FULLSCREEN);  
 		// Invisible the title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		loadViewLayout();
 		init();
 	}
 
