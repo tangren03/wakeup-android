@@ -2,6 +2,7 @@ package com.ryanzone.wakeup.utils;
 
 import android.content.Context;
 import android.widget.Toast;
+
 /**
  * Toast tolls
  * ToastUtils.java

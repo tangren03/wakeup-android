@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/share_bg" >
+
+    <ImageView
+        android:id="@+id/ib_text"
+        style="@style/layout_all_wrap"
+        android:layout_centerInParent="true"
+        android:src="@drawable/share_text" />
+
+    <TextView
+        android:id="@+id/tv_wakeup_time"
+        style="@style/layout_all_wrap"
+        android:layout_above="@+id/ib_text"
+        android:layout_marginBottom="50dip"
+        android:text="本次起床用时：1分30秒"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/layout_all_wrap"
+        android:layout_above="@+id/tv_wakeup_time"
+        android:paddingBottom="30dip"
+        android:layout_centerHorizontal="true"
+        android:text="06:31"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/btn_challenge"
+        style="@style/layout_all_wrap"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ib_text"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/challenge_selector" />
+
+    <Button
+        android:id="@+id/btn_share"
+        style="@style/layout_all_wrap"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_challenge"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/share_selector" />
+    
+    <Button
+        android:id="@+id/btn_step"
+        style="@style/layout_all_wrap"
+        android:background="@drawable/step_selector"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dip"
+        android:layout_marginRight="20dip"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

@@ -25,7 +25,14 @@
         <activity
             android:name="com.ryanzone.wakeup.activity.MainActivity"
             android:screenOrientation="portrait" >
+            
         </activity>
+        <activity
+            android:name="com.ryanzone.wakeup.activity.ShakingActivity"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.ryanzone.wakeup.activity.ShareActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ryanzone.wakeup.activity.SettingActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" 

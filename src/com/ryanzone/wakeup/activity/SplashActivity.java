@@ -30,7 +30,7 @@ public class SplashActivity extends RTActivity {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			openActivity(MainActivity.class);
-//			finish();
+			finish();
 		}
 		
 	};

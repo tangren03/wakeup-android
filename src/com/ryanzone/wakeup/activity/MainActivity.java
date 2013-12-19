@@ -40,7 +40,6 @@ public class MainActivity extends RTActivity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.btn_add) {
-			//TODO open clock setting activity
 		    openActivity(SettingActivity.class);
 		}
 	}

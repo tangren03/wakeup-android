@@ -9,15 +9,14 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -31,7 +30,6 @@ import com.ryanzone.wakeup.adapter.TimeSelectAdapter;
 import com.ryanzone.wakeup.utils.Common;
 
 /**
- * Ever activity should extends from RTActivity
  * SettingActivity.java
  * @author walker02
  * Create at 2013-12-12 下午2:14:22
@@ -48,10 +46,10 @@ public class SettingActivity extends RTActivity {
     private PopupWindow       mPopupWindow;
     private List<String>      dayStrings;
     private RelativeLayout rlSettingRoot;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
         initView();
         initData();
     }
@@ -68,6 +66,21 @@ public class SettingActivity extends RTActivity {
                 showPopuWindow(arg0);
             }
         });
+        
+        /**
+         * Modified by Ryan 2013.12.18 18:52
+         */
+        ((Button)this.findViewById(R.id.btnRight)).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				/**
+				 * Open share activity
+				 */
+				//FIXME
+				openActivity(ShareActivity.class);
+			}
+		});
     }
 
     @SuppressLint("NewApi")
