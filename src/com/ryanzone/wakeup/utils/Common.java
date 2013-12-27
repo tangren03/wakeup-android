@@ -6,6 +6,8 @@ package com.ryanzone.wakeup.utils;
  * @author zhangfuli
  */
 public class Common {
+	
+	public static final String WX_APP_ID = "wxa3b3bc276f01e94a";
 	/**
 	 * 获取显示的小时和分钟
 	 * @param start 起始时间
